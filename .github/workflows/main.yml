@@ -16,4 +16,4 @@ jobs:
     - name: build
       run: gcc -S test.c -o test.s && gcc -c test.c -o test.asm && gcc test.c -o test
     - name: test
-      run: objdump test > test.objdump && objdump test.s.out > test.s.objdump && diff test.s.objdump test.objdump > test.diff
+      run: objdump -d test > test.objdump && objdump -d test.s.out > test.s.objdump && diff test.s.objdump test.objdump > test.diff
